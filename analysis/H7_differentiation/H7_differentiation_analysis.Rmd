@@ -15,7 +15,7 @@ library(biomaRt)
 
 # Read In Data/Experimental Design
 
-```{r reading_in_data}
+```{r reading_in_data, warning=F}
 #I wrote this csv file manually for the data set
 H7_exp_data = read_csv(here('RNAseq_results/CCM2H7/sample_data.csv'))
 #convert the Day column to factor to make it clear that the day of sampling is
@@ -28,7 +28,7 @@ H7_data = read_csv(here('RNAseq_results/CCM2H7/RNAseq_All.csv'))
 
 # Collect ID Conversion Table
 
-```{r id_conversion, cache=T}
+```{r id_conversion, cache=T, warning=F}
 #Let's get a table from ENSEMBL to convert the UCSC transcript ID's to the more
 #readily readable HGNC IDs.
 if (! file.exists(here('ucsc_to_hgnc_transcripts.csv'))) {
@@ -160,7 +160,7 @@ ggplot(top_five_count_data,aes(x = Day, y = count, color = KO, group = KO)) +
   geom_point(alpha=0.75) + 
   facet_wrap(~HGNC, scales="free") +
   geom_smooth(se = FALSE, method = "loess", alpha=0.75) +
-  labs(y="")
+  labs(y="") + 
   BerginskiRMisc::theme_berginski()
 ```
 
@@ -189,3 +189,4 @@ ggplot(top_five_count_data,aes(x = Day, y = count, color = KO, group = KO)) +
   geom_smooth(se = FALSE, method = "loess", alpha=0.75) +
   BerginskiRMisc::theme_berginski()
 ```
+

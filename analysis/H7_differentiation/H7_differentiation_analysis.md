@@ -10,8 +10,6 @@ Read In Data/Experimental Design
 H7_exp_data = read_csv(here('RNAseq_results/CCM2H7/sample_data.csv'))
 ```
 
-    ## Warning: Missing column names filled in: 'X1' [1]
-
     ## Parsed with column specification:
     ## cols(
     ##   X1 = col_character(),
@@ -222,78 +220,11 @@ ggplot(top_five_count_data,aes(x = Day, y = count, color = KO, group = KO)) +
   geom_point(alpha=0.75) + 
   facet_wrap(~HGNC, scales="free") +
   geom_smooth(se = FALSE, method = "loess", alpha=0.75) +
-  labs(y="")
-```
-
-![](H7_differentiation_analysis_files/figure-markdown_github/top_five_kinase_plots-1.png)
-
-``` r
+  labs(y="") + 
   BerginskiRMisc::theme_berginski()
 ```
 
-    ## List of 8
-    ##  $ axis.title.x    :List of 11
-    ##   ..$ family       : NULL
-    ##   ..$ face         : NULL
-    ##   ..$ colour       : NULL
-    ##   ..$ size         : NULL
-    ##   ..$ hjust        : NULL
-    ##   ..$ vjust        : NULL
-    ##   ..$ angle        : NULL
-    ##   ..$ lineheight   : NULL
-    ##   ..$ margin       : 'margin' num [1:4] 1.5pt 0pt 0pt 0pt
-    ##   .. ..- attr(*, "valid.unit")= int 8
-    ##   .. ..- attr(*, "unit")= chr "pt"
-    ##   ..$ debug        : NULL
-    ##   ..$ inherit.blank: logi FALSE
-    ##   ..- attr(*, "class")= chr [1:2] "element_text" "element"
-    ##  $ axis.title.y    :List of 11
-    ##   ..$ family       : NULL
-    ##   ..$ face         : NULL
-    ##   ..$ colour       : NULL
-    ##   ..$ size         : NULL
-    ##   ..$ hjust        : NULL
-    ##   ..$ vjust        : NULL
-    ##   ..$ angle        : NULL
-    ##   ..$ lineheight   : NULL
-    ##   ..$ margin       : 'margin' num [1:4] 0pt 1.5pt 0pt 0pt
-    ##   .. ..- attr(*, "valid.unit")= int 8
-    ##   .. ..- attr(*, "unit")= chr "pt"
-    ##   ..$ debug        : NULL
-    ##   ..$ inherit.blank: logi FALSE
-    ##   ..- attr(*, "class")= chr [1:2] "element_text" "element"
-    ##  $ axis.text       :List of 11
-    ##   ..$ family       : NULL
-    ##   ..$ face         : NULL
-    ##   ..$ colour       : chr "black"
-    ##   ..$ size         : NULL
-    ##   ..$ hjust        : NULL
-    ##   ..$ vjust        : NULL
-    ##   ..$ angle        : NULL
-    ##   ..$ lineheight   : NULL
-    ##   ..$ margin       : NULL
-    ##   ..$ debug        : NULL
-    ##   ..$ inherit.blank: logi FALSE
-    ##   ..- attr(*, "class")= chr [1:2] "element_text" "element"
-    ##  $ axis.ticks      :List of 6
-    ##   ..$ colour       : chr "black"
-    ##   ..$ size         : NULL
-    ##   ..$ linetype     : NULL
-    ##   ..$ lineend      : NULL
-    ##   ..$ arrow        : logi FALSE
-    ##   ..$ inherit.blank: logi FALSE
-    ##   ..- attr(*, "class")= chr [1:2] "element_line" "element"
-    ##  $ panel.background: list()
-    ##   ..- attr(*, "class")= chr [1:2] "element_blank" "element"
-    ##  $ panel.grid      : list()
-    ##   ..- attr(*, "class")= chr [1:2] "element_blank" "element"
-    ##  $ panel.grid.major: list()
-    ##   ..- attr(*, "class")= chr [1:2] "element_blank" "element"
-    ##  $ panel.grid.minor: list()
-    ##   ..- attr(*, "class")= chr [1:2] "element_blank" "element"
-    ##  - attr(*, "class")= chr [1:2] "theme" "gg"
-    ##  - attr(*, "complete")= logi FALSE
-    ##  - attr(*, "validate")= logi TRUE
+![](H7_differentiation_analysis_files/figure-markdown_github/top_five_kinase_plots-1.png)
 
 Dark Kinases
 ------------
